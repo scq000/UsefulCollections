@@ -4,10 +4,10 @@
  */
 function Set(arr) {
 	this.items = {};
-	if(arr && typeof arr instanceof Array) {
+	if(arr && (arr instanceof Array)) {
 		arr.forEach(function(item) {
 			this.items[JSON.stringify(item)] = item;
-		}).bind(this);
+		}, this);
 	}
 }
 
