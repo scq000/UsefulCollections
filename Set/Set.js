@@ -54,7 +54,7 @@ Set.prototype = {
 				this.delete(this.items[key]);
 			}
 		}
-		return this.items;
+		return new Set(this.items);
 	},
 
 	size: function() {
