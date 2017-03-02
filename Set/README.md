@@ -6,9 +6,10 @@
 
 ## 构造函数
 
-构造函数提供了将数组转换成Set的方法。
+构造函数提供了将数组转换成Set的方法,不带参数将返回空的集合。
 ```
-var set = new Set([1,2,3]);
+var set1 = new Set();
+var set2 = new Set([1,2,3]);
 ```
 
 ## 增删改查
@@ -20,13 +21,16 @@ var set = new Set([1,2,3]);
 5. addMany([...value]) 批量添加存入集合，会遍历这个数组，执行add方法
 6. deleteMany([...value]) 批量删除
 7. filter(fn) 传入一个回调函数，过滤指定条件的数据集合
+
 ```
 var set = new Set([1,2,3,4,5]);
 
 set.filter(function(value) {
 	return value > 3;
 }); // 返回由[4,5]组成的集合
+
 ```
-8.size 返回集合的长度
-9.values 返回一个由value值组成的数组结构
+
+8.size() 返回集合的长度
+9.values() 返回一个由value值组成的数组结构
 
