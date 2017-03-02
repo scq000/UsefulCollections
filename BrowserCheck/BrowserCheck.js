@@ -48,7 +48,7 @@ var BrowserCheck = {
   },
 
   getIEVersion: function() {
-    if (!this.isIE && !this.isEdge) {
+    if (!this.isIE() && !this.isEdge()) {
       return false;
     }
 
