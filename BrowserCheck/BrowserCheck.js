@@ -1,30 +1,28 @@
-var appVersion = (window.navigator && window.navigator.appVersion || '').toLowerCase();
-var userAgent = (window.navigator && window.navigator.userAgent || '').toLowerCase();
-var vendor = (window.navigator && window.navigator.vendor || '').toLowerCase();
+var userAgent = (window.navigator && window.navigator.userAgent || '');
 
 var BrowserCheck = {
   isAndroid: function() {
-    return /android/.test(userAgent);
+    return /android/i.test(userAgent);
   },
 
   isAndroidPhone: function() {
-    return this.isAndroid() && /mobile/.test(userAgent);
+    return this.isAndroid() && /mobile/i.test(userAgent);
   },
 
   isAndroidTablet: function() {
-    return this.isAndroid() && !/mobile/.test(userAgent);
+    return this.isAndroid() && !/mobile/i.test(userAgent);
   },
 
   isIOS: function() {
-    return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    return /iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream;
   },
 
   isIPad: function() {
-    return /iPad/.test(userAgent) && !window.MSStream;
+    return /iPad/i.test(userAgent) && !window.MSStream;
   },
 
   isIPhone: function() {
-    return /iPhone/.test(userAgent) && !window.MSStream;
+    return /iPhone/i.test(userAgent) && !window.MSStream;
   }
 
   isChrome: function() {
