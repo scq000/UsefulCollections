@@ -6,19 +6,19 @@ function Set(arr) {
     this.items = {};
     if (arr && (arr instanceof Array)) {
         arr.forEach(function(item) {
-            this.items[JSON.stringify(item)] = item;
+            this.items[getProp(item)] = item;
         }, this);
     }
 }
 
 Set.prototype = {
     has: function(value) {
-        return this.items.hasOwnProperty(JSON.stringify(value));
+        return this.items.hasOwnProperty(getProp(value));
     },
 
     add: function(value) {
         if (!this.has(value)) {
-            this.items[JSON.stringify(value)] = value;
+            this.items[getProp(value)] = value;
             return true;
         }
         return false;
@@ -26,7 +26,7 @@ Set.prototype = {
 
     delete: function(value) {
         if (this.has(value)) {
-            delete this.items[JSON.stringify(value)];
+            delete this.items[getProp(value)];
             return true;
         }
         return false;
@@ -71,4 +71,8 @@ Set.prototype = {
 
         return result;
     }
+}
+
+function getProp(value) {
+    return JSON.stringify(value, Object.keys(value).sort());
 }
