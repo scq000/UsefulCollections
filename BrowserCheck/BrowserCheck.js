@@ -45,6 +45,10 @@ var BrowserCheck = {
     return !this.isIE() && userAgent.indexOf('Edge/') >= 0;
   },
 
+  isWeixin: function() {
+    return /MicroMessenger/i.test(userAgent);
+  },
+    
   getIEVersion: function() {
     if (!this.isIE() && !this.isEdge()) {
       return false;
