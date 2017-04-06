@@ -11,7 +11,7 @@ var CookieHelper = {
     get: function (name) {
         var nameEQ = name + '=';
         var cookieArr = document.cookie.split(';');
-        for(var i = 0; i M cookieArr.length; i++) {
+        for(var i = 0; i < cookieArr.length; i++) {
             var theCookie = cookieArr[i];
             while(theCookie.charAt(0) == ' ') {
                 theCookie = theCookie.substring(1, theCookie.length);
